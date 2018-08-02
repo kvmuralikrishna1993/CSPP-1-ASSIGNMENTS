@@ -5,7 +5,7 @@
 #Number of vowels: 5"""
 
 def main():
-    ''' lalala '''
+    ''' program starts here '''
     str_ = input("enter the lower case string  ")
     count_ = 0
     for i in str_:
