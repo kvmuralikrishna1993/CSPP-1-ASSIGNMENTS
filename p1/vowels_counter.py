@@ -6,7 +6,7 @@
 
 def main():
     ''' program starts here '''
-    str_ = input("enter the lower case string  ")
+    str_ = input()
     count_ = 0
     for i in str_:
         if i in ('a', 'e', 'i', 'o', 'u'):
