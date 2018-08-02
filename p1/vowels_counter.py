@@ -11,6 +11,6 @@ def main():
     for i in str_:
         if i in ('a', 'e', 'i', 'o', 'u'):
             count_ = count_+1
-    print("Number of vowels: " + str(count_))
+    print(count_)
 if __name__ == "__main__":
     main()
