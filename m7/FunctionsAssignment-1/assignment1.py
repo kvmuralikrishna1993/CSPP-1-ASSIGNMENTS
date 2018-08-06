@@ -36,6 +36,6 @@ def main():
     data_ = input()
     data_ = data_.split(' ')
     data_ = list(map(float, data_))
-    print(payingdebtoffinayear_(data_[0], data_[1], data_[2]))
+    print("Remaining balance: "+ str(payingdebtoffinayear_(data_[0], data_[1], data_[2]))
 if __name__ == "__main__":
     main()
