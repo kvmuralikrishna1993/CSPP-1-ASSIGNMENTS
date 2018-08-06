@@ -34,7 +34,6 @@ def payingdebtoffinayear_(bal_, annuminterst_):
             bal2_ = unbal_+(unbal_*annuminterst_/12)
             ti_ = ti_+1
         if bal2_ <= 0.5:
-            print(paid_)
             break
         paid_ = paid_+10
     return paid_
