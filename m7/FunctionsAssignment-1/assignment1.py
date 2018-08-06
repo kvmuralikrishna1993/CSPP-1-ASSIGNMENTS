@@ -30,7 +30,7 @@ def payingdebtoffinayear_(bal_, annuminterst_, monthlyinterst_):
         unbal_ = bal_-paid_
         bal_ = unbal_+(unbal_*annuminterst_/12)
         ti_ = ti_+1
-    return bal_
+    return(round(bal_,2))
 def main():
     '''main program starts'''
     data_ = input()
