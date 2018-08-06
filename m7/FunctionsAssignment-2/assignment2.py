@@ -25,6 +25,8 @@ A summary of the required math is found below:
 (Monthly unpaid balance)+(Monthly interest rate x Monthly unpaid balance)'''
 def payingdebtoffinayear_(bal_, annuminterst_):
     '''Calculation starts here'''
+    if bal_ < 0:
+        return 0
     paid_ = 10
     while True:
         ti_ = 0
