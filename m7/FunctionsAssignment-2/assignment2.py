@@ -28,14 +28,15 @@ def payingdebtoffinayear_(bal_, annuminterst_):
     if bal_ < 0:
         return 0
     paid_ = 10
+    episilon = 0.5
     while True:
-        ti_ = 0
+        mnth_ = 0
         bal2_ = bal_
-        while ti_ != 12:
+        while mnth_ != 12:
             unbal_ = bal2_-(paid_)
             bal2_ = unbal_+(unbal_*annuminterst_/12)
-            ti_ = ti_+1
-        if bal2_ <= 0.5:
+            mnth_ = mnth_+1
+        if bal2_ <= episilon:
             break
         paid_ = paid_+10
     return paid_
