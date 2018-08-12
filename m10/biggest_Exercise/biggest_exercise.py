@@ -21,11 +21,11 @@ def main():
     adict_ = {}
     for i in range(int(num_)):
         set_ = input()
-        len_ = set_.split()
-        if len_[0][0] not in adict_:
-            adict_[len_[0][0]] = [len_[1]]
+        mset_ = set_.split()
+        if mset_[0][0] not in adict_:
+            adict_[mset_[0][0]] = [mset_[1]]
         else:
-            adict_[len_[0][0]].append(len_[1])
+            adict_[mset_[0][0]].append(mset_[1])
     print(biggest_(adict_))
 if __name__ == "__main__":
     main()
