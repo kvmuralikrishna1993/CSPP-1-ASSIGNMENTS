@@ -9,7 +9,7 @@ def kind(face_values, num):
     for face in face_values:
         if face_values.count(face) == num:
             return face
-    
+        return False
 
 def get_facevalues(hand):
     '''Face values of cards'''
