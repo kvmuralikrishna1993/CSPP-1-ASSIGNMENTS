@@ -5,14 +5,16 @@
 '''
 
 def kind(face_values, num):
+    '''kind of cards'''
     for face in face_values:
         if face_values.count(face) == num:
             return face
     
 
 def get_facevalues(hand):
+    '''Face values of cards'''
     faces = ['--23456789TJQKA'.index(face) for face, suite in hand]
-    return sorted(faces, reverse = True)
+    return sorted(faces, reverse=True)
 
 def is_straight(hand):
     '''
@@ -25,8 +27,8 @@ def is_straight(hand):
         Write the code for it and return True if it is a straight else return False
     '''
     face_values = get_facevalues(hand)
-    if face_values == [14,5,4,3,2]:
-        face_values = [5,4,3,2,1]
+    if face_values == [14, 5, 4, 3, 2]:
+        face_values = [5, 4, 3, 2, 1]
     set_face_values = set(face_values)
     return (len(set_face_values) == 5) and ((max(set_face_values) - min(set_face_values)) == 4)
 
@@ -39,8 +41,7 @@ def is_flush(hand):
         Think of an algorithm: given the card suite how to check if it is a flush
         Write the code for it and return True if it is a flush else return False
     '''
-    set_ = set([suite for face, suite in hand])
-    return len(set_) == 1
+    return len(set([suite for face, suite in hand])) == 1
 
 def hand_rank(hand):
     '''
