@@ -41,7 +41,7 @@ def is_flush(hand):
         Think of an algorithm: given the card suite how to check if it is a flush
         Write the code for it and return True if it is a flush else return False
     '''
-    return len(set([suite for face, suite in hand])) == 1
+    return len(set(suite for face, suite in hand)) == 1
 
 def hand_rank(hand):
     '''
