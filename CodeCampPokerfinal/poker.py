@@ -85,7 +85,6 @@ def hand_rank(hand):
                 if kind(face_values, 2) and kind(sorted(face_values), 2) else
 
             (1, kind(face_values, 2), face_values) if kind(face_values, 2) else
-            
             (0, face_values))
 
 def poker(hands):
