@@ -1,4 +1,4 @@
-'''
+ '''
     Write a program to evaluate poker hands and determine the winner
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
@@ -28,7 +28,7 @@ def is_straight(hand):
         except ValueError:
             return False
         else:
-            sum1 = sum(range(max(set2), min(set2)))
+            sum1 = sum(range(min(set2), max(set2)+1))
             sum2 = sum(set2)
             if sum1 == sum2:
                 return True
