@@ -33,7 +33,7 @@ def check_row(sudoku):
     for i in sudoku1:
         len_ = len(set(i))
         sum_ = sum(i)
-        if len_ == 9 and sum_ == 45:
+        if len_ != 9 and sum_ != 45:
             return True
         return False
 
@@ -76,9 +76,9 @@ def check_mini(sudoku):
     for i in sort_squares:
         len_ = len(set(i))
         sum_ = sum(i)
-        if len_ == 9 and sum_ == 45:
-            return True
-        return False
+        if len_ != 9 and sum_ != 45:
+            return False
+        return True
 
 def main():
     '''
