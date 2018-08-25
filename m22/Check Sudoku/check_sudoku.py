@@ -38,21 +38,25 @@ def check_row(sudoku):
         return False
 
 def transpose(sudoku):
-    transPose =[]
+    '''transpose'''
+    transpose_ = []
     for i in range(len(sudoku)):
-        row =[]
+        row = []
         for j in range(len(sudoku[0])):
             row.append(sudoku[j][i])
-        transPose.append(row)
-    return check_row(transPose)
+        transpose_.append(row)
+    return check_row(transpose_)
 
 def check_col(sudoku):
+    '''check column'''
     tsudoku = transpose(sudoku)
     return check_row(tsudoku)
 
 def create_mini(sudoku):
-    for i in range(0,9,3):
-        for j in range(0,9,3):
+    square = []
+    squares = []
+    for i in range(0, 9, 3):
+        for j in range(0, 9, 3):
             square = list(itertools.chain(row[j:j+3] for row in sudoku[i:i+3]))
             squares.append(square)
     new = []
@@ -61,6 +65,7 @@ def create_mini(sudoku):
     return new
 
 def check_mini(sudoku):
+    '''check mini'''
     squares = create_mini(sudoku)
     sort_squares = []
     for i in squares:
@@ -68,7 +73,7 @@ def check_mini(sudoku):
         for j in i:
             temp.extend(j)
         sort_squares.append(temp)
-    for i in sort_squares :
+    for i in sort_squares:
         len_ = len(set(i))
         sum_ = sum(i)
         if len_ == 9 and sum_ == 45:
@@ -80,7 +85,6 @@ def main():
         main function to read input sudoku from console
         call check_sudoku function and print the result to console
     '''
-    
     # initialize empty list
     sudoku = []
 
