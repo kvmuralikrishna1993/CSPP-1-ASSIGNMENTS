@@ -35,7 +35,7 @@ def check_row(sudoku):
         sum_ = sum(i)
         if len_ != 9 and sum_ != 45:
             return True
-        return False
+    return False
 
 def transpose(sudoku):
     '''transpose'''
@@ -78,7 +78,7 @@ def check_mini(sudoku):
         sum_ = sum(i)
         if len_ != 9 and sum_ != 45:
             return False
-        return True
+    return True
 
 def main():
     '''
