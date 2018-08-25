@@ -53,10 +53,10 @@ def check_col(sudoku):
     return check_row(tsudoku)
 
 def create_mini(sudoku):
-    square = []
     squares = []
     for i in range(0, 9, 3):
         for j in range(0, 9, 3):
+        	square = []
             square = list(itertools.chain(row[j:j+3] for row in sudoku[i:i+3]))
             squares.append(square)
     new = []
