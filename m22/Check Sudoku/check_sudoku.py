@@ -56,7 +56,7 @@ def create_mini(sudoku):
     squares = []
     for i in range(0, 9, 3):
         for j in range(0, 9, 3):
-        	square = []
+            square = []
             square = list(itertools.chain(row[j:j+3] for row in sudoku[i:i+3]))
             squares.append(square)
     new = []
