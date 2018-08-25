@@ -34,7 +34,6 @@ def check_row(sudoku):
         len_ = len(set(i))
         sum_ = sum(i)
         if len_ == 9 and sum_ == 45:
-            print("r")
             return True
         return False
 
@@ -49,7 +48,6 @@ def transpose(sudoku):
 
 def check_col(sudoku):
     tsudoku = transpose(sudoku)
-    print(check_row(tsudoku))
     return check_row(tsudoku)
 
 def create_mini(sudoku):
@@ -60,7 +58,6 @@ def create_mini(sudoku):
     new = []
     for i in squares:
         new.append([list(map(int, v)) for i, v in enumerate(i)])
-    print(new)
     return new
 
 def check_mini(sudoku):
@@ -71,11 +68,10 @@ def check_mini(sudoku):
         for j in i:
             temp.extend(j)
         sort_squares.append(temp)
-    for i in sort_squares:
+    for i in sort_squares :
         len_ = len(set(i))
         sum_ = sum(i)
         if len_ == 9 and sum_ == 45:
-            print("m")
             return True
         return False
 
