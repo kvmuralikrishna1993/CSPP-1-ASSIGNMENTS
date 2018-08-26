@@ -30,11 +30,17 @@ def check_row(sudoku):
         sudoku1 = [list(map(int, v)) for i, v in enumerate(sudoku)]
     except:
         len_ = 0
+    count = 0
     for i in sudoku1:
         len_ = len(set(i))
         sum_ = sum(i)
-        if len_ != 9 and sum_ != 45:
-            return True
+        #print(len_)
+        #print(sum_)
+        if len_ == 9 and sum_ == 45:
+            count += 1
+    print(count)
+    if count == 9:
+        return True
     return False
 
 def transpose(sudoku):
@@ -50,6 +56,7 @@ def transpose(sudoku):
 def check_col(sudoku):
     '''check column'''
     tsudoku = transpose(sudoku)
+    print(check_row(tsudoku))
     return check_row(tsudoku)
 
 def create_mini(sudoku):
@@ -59,9 +66,11 @@ def create_mini(sudoku):
             square = []
             square = list(itertools.chain(row[j:j+3] for row in sudoku[i:i+3]))
             squares.append(square)
+    #print(squares)
     new = []
     for i in squares:
         new.append([list(map(int, v)) for i, v in enumerate(i)])
+    #print(new)
     return new
 
 def check_mini(sudoku):
@@ -73,12 +82,15 @@ def check_mini(sudoku):
         for j in i:
             temp.extend(j)
         sort_squares.append(temp)
+    count = 1
     for i in sort_squares:
         len_ = len(set(i))
         sum_ = sum(i)
-        if len_ != 9 and sum_ != 45:
-            return False
-    return True
+        if len_ == 9 and sum_ == 45:
+            count += 1
+    if count == 9:
+        return True
+    return False
 
 def main():
     '''
